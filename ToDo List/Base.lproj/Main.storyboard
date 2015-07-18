@@ -20,7 +20,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="TODO" id="SFq-wl-YQd">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W94-pi-8Mu"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W94-pi-8Mu">
+                                            <connections>
+                                                <segue destination="5Uj-kW-W1b" kind="show" id="lCX-od-WjJ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -48,7 +52,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Add Item" id="zjL-ht-txP">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="iMG-3h-EKk"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="iMG-3h-EKk">
+                                            <connections>
+                                                <segue destination="vXZ-lx-hvc" kind="show" id="2Zf-jA-q8P"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

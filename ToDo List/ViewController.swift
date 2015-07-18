@@ -8,8 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return toDoDict.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
+        
+        let date = Array(toDoDict.keys)
+        
+        let todoItem = Array(toDoDict.values)
+        
+        cell.textLabel?.text = date[indexPath.row]
+
+        cell.detailTextLabel?.text = todoItem[indexPath.row]
+        
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

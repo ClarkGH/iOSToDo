@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="422.5" y="320.5"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller2-->
         <scene sceneID="EnZ-hX-QDi">
             <objects>
-                <viewController id="RAa-jd-AAd" sceneMemberID="viewController">
+                <viewController id="RAa-jd-AAd" customClass="ViewController2" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lTr-gh-Mv9"/>
                         <viewControllerLayoutGuide type="bottom" id="LIg-YR-Jen"/>
@@ -92,11 +92,18 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submit:" destination="RAa-jd-AAd" eventType="touchUpInside" id="dk9-qV-6OE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="dateIn" destination="kkN-So-ciQ" id="Fco-0U-2Tf"/>
+                        <outlet property="toDoIn" destination="C9d-E5-OZk" id="kWY-xL-nwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpU-jj-wbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

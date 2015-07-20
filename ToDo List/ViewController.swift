@@ -8,19 +8,20 @@
 
 import UIKit
 
+var date = [String]()
+
+var todoItem = [String]()
+
+
 class ViewController: UIViewController, UITableViewDelegate {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoDict.count
+        return date.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
-        
-        let date = Array(toDoDict.keys)
-        
-        let todoItem = Array(toDoDict.values)
         
         cell.textLabel?.text = date[indexPath.row]
 
@@ -31,7 +32,14 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("TodoDate") != nil {
+             date = NSUserDefaults.standardUserDefaults().objectForKey("TodoDate") as! [String]
+        }
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("TodoItem") != nil {
+            todoItem = NSUserDefaults.standardUserDefaults().objectForKey("TodoItem") as! [String]
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,8 +8,6 @@
 
 import UIKit
 
-var toDoDict = [String: String]()
-
 class ViewController2: UIViewController {
 
     @IBOutlet weak var toDoIn: UITextField!
@@ -17,10 +15,11 @@ class ViewController2: UIViewController {
     @IBOutlet weak var dateIn: UITextField!
     
     @IBAction func submit(sender: AnyObject) {
-        toDoDict[dateIn.text] = toDoIn.text
-        for to in toDoDict {
-            println(to)
-        }
+        date.append(dateIn.text)
+        todoItem.append(toDoIn.text)
+        
+        NSUserDefaults.standardUserDefaults().setObject(date, forKey: "TodoDate")
+        NSUserDefaults.standardUserDefaults().setObject(todoItem, forKey: "TodoItem")
     }
     
     override func viewDidLoad() {

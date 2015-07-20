@@ -30,9 +30,18 @@ class ViewController2: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        toDoIn.resignFirstResponder()
+        dateIn.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation

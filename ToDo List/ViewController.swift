@@ -15,6 +15,8 @@ var todoItem = [String]()
 
 class ViewController: UIViewController, UITableViewDelegate {
 
+    @IBOutlet weak var Table: UITableView!
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return date.count
     }
@@ -28,6 +30,20 @@ class ViewController: UIViewController, UITableViewDelegate {
         cell.detailTextLabel?.text = todoItem[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+            
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            todoItem.removeAtIndex(indexPath.row)
+            date.removeAtIndex(indexPath.row)
+            
+            NSUserDefaults.standardUserDefaults().setObject(date, forKey: "TodoDate")
+            
+            NSUserDefaults.standardUserDefaults().setObject(todoItem, forKey: "TodoItem")
+            
+        }
     }
     
     override func viewDidLoad() {

@@ -43,6 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             
             NSUserDefaults.standardUserDefaults().setObject(todoItem, forKey: "TodoItem")
             
+            Table.reloadData()
         }
     }
     
